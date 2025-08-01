@@ -99,7 +99,7 @@ function RegisterPage() {
           />
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer"
             disabled={isLoading}
           >
             {isLoading ? "Registering..." : "Register"}
@@ -110,7 +110,7 @@ function RegisterPage() {
           Already have an account?{" "}
           <button
             onClick={() => router.push("/login")}
-            className="text-blue-500 hover:underline"
+            className="text-blue-500 hover:underline cursor-pointer"
             disabled={isLoading}
           >
             Login here

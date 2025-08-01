@@ -16,7 +16,9 @@ function LoginPage() {
     setIsLoading(true);
 
     const result = await signIn("credentials", {
-      email,
+        redirect: false,       // let *you* handle routing
+        email,
+        password,   //  pass the captured password
     });
 
     if (result?.error) {
@@ -92,7 +94,7 @@ return (
           
           <button 
             type="submit"
-            className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors disabled:bg-gray-900 disabled:cursor-not-allowed"
+            className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors disabled:bg-gray-900 disabled:cursor-not-allowed cursor-pointer"
             
 
             disabled={isLoading}
@@ -106,7 +108,7 @@ return (
             Don't have an account?{' '}
             <button 
               onClick={() => router.push("/register")}
-              className="text-blue-500 hover:text-blue-700 underline"
+              className="text-blue-500 hover:text-blue-700 underline cursor-pointer"
             >
               Register
             </button>

@@ -1,4 +1,5 @@
 "use client";
+
 import FileUpload from "./components/FileUpload";
 import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
@@ -48,7 +49,8 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <span className="text-gray-600 truncate">
-              Welcome,&nbsp;{session?.user?.email}
+              Welcome,
+              {session?.user?.email}
             </span>
             <button
               onClick={handleLogout}
